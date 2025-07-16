@@ -1,0 +1,134 @@
+/* ====================
+✨ Animasi Fade In
+==================== */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+  
+  .animate-fadeIn {
+    animation: fadeIn 1s ease-out forwards;
+  }
+  
+  /* ====================
+  📥 Input Styling
+  ==================== */
+  .input-style {
+    width: 100%;
+    padding: 0.5rem 1rem;
+    margin-bottom: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 0.5rem;
+    transition: border 0.3s, box-shadow 0.3s;
+  }
+  
+  .input-style:focus {
+    outline: none;
+    border-color: #3b82f6; /* Tailwind blue-500 */
+    box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.3);
+  }
+  
+  /* ====================
+  🟦 Tombol Submit
+  ==================== */
+  .btn-submit {
+    width: 100%;
+    background-color: #3b82f6;
+    color: white;
+    font-weight: bold;
+    padding: 0.75rem;
+    border-radius: 0.5rem;
+    transition: background 0.3s, transform 0.2s;
+  }
+  
+  .btn-submit:hover {
+    background-color: #2563eb;
+    transform: scale(1.03);
+  }
+  
+  /* ====================
+  😈 Spinner Loader
+  ==================== */
+  .loader {
+    border: 4px solid #f3f3f3;
+    border-top: 4px solid #2563eb;
+    border-radius: 50%;
+    width: 20px;
+    height: 20px;
+    animation: spin 1s linear infinite;
+    display: inline-block;
+    vertical-align: middle;
+    margin-right: 8px;
+  }
+  
+  @keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+  }
+  
+  /* ====================
+  🧨 Gambar Prank & Teks
+  ==================== */
+  .prank-img {
+    filter: drop-shadow(0 0 10px #f87171);
+  }
+  
+  .prank-text {
+    text-shadow: 2px 2px #000000;
+  }
+  
+  /* Tambahan efek glowing lucu */
+  .glow-text {
+    color: #f87171;
+    text-shadow:
+      0 0 5px #f87171,
+      0 0 10px #ef4444,
+      0 0 20px #dc2626;
+  }
+  
+  /* ====================
+  🚨 Shake Animation (validasi error)
+  ==================== */
+  @keyframes shake {
+    0% { transform: translateX(0); }
+    25% { transform: translateX(-5px); }
+    50% { transform: translateX(5px); }
+    75% { transform: translateX(-5px); }
+    100% { transform: translateX(0); }
+  }
+  
+  .shake {
+    animation: shake 0.5s;
+  }
+  
+  /* ====================
+  🌈 Background Gradient Animation (opsional)
+  ==================== */
+  .animated-bg {
+    background: linear-gradient(-45deg, #1e3a8a, #2563eb, #3b82f6, #93c5fd);
+    background-size: 400% 400%;
+    animation: gradientShift 10s ease infinite;
+  }
+  
+  @keyframes gradientShift {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+  }
+  
+  /* ====================
+  🔔 Toast Message Style
+  ==================== */
+  .toast {
+    position: fixed;
+    bottom: 1.25rem;
+    right: 1.25rem;
+    background-color: #facc15; /* yellow-400 */
+    color: #1f2937;             /* gray-800 */
+    padding: 0.75rem 1.25rem;
+    border-radius: 0.5rem;
+    box-shadow: 0 5px 10px rgba(0,0,0,0.2);
+    animation: fadeIn 0.3s ease-out;
+    z-index: 50;
+  }
+  

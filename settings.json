@@ -1,0 +1,15 @@
+{
+    "cSpell.enabled": false,
+    "cSpell.enabledLanguageIds": [
+      "javascript",
+      "typescript",
+      "json",
+      "markdown"
+    ],
+    "cSpell.language": "en",
+    "cSpell.ignoreRegExpList": [
+      "<[^>]*>",            // Ignore HTML tags
+      "\"[^\"\\s]*\""       // Ignore values inside quotes
+    ]
+  }
+  
