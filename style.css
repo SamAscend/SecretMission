@@ -131,7 +131,14 @@
   box-shadow: 0 5px 10px rgba(0,0,0,0.2);
   animation: fadeIn 0.3s ease-out;
   z-index: 50;
+  transition: opacity 0.3s ease;
+  opacity: 1;
 }
+
+.toast.fade-out {
+  opacity: 0;
+}
+
 
 /* ====================
 💎 Optional Glass Effect
@@ -142,4 +149,14 @@
   -webkit-backdrop-filter: blur(12px);
   border: 1px solid rgba(255, 255, 255, 0.15);
   box-shadow: 0 8px 32px rgba(0, 0, 0, 0.25);
+}
+
+.input-style:hover {
+  border-color: #93c5fd; /* blue-300 */
+  box-shadow: 0 0 0 3px rgba(147, 197, 253, 0.3);
+}
+
+.prank-img:hover {
+  transform: scale(1.05) rotate(2deg);
+  transition: transform 0.3s ease-in-out;
 }
