@@ -6,23 +6,54 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <script src="https://cdn.tailwindcss.com"></script>
   <link rel="stylesheet" href="style.css">
+  <style>
+    @keyframes shake {
+      0% { transform: translateX(0); }
+      20% { transform: translateX(-10px); }
+      40% { transform: translateX(10px); }
+      60% { transform: translateX(-10px); }
+      80% { transform: translateX(10px); }
+      100% { transform: translateX(0); }
+    }
+
+    .shake {
+      animation: shake 0.5s ease-in-out infinite;
+    }
+  </style>
 </head>
+
 <body class="bg-black flex flex-col justify-center items-center min-h-screen text-center animate-fadeIn" onload="playPrank()">
-  <img src="images/Galau.jpeg" alt="Galau" class="w-60 mb-6 animate-bounce prank-img" />
-  <h1 class="text-5xl md:text-6xl font-extrabold text-red-500 prank-text">PRANK!!! 🤪</h1>
-  <p class="text-white mt-4 text-lg">Lu kira ini form beneran? Hahahaha!</p>
-  <p id="user-name" class="text-white text-lg mt-2"></p>
-  <a href="index.html" class="mt-8 text-blue-400 hover:underline">Balik ke Form</a>
+  <img src="images/Galau.jpeg" alt="Galau" class="w-64 md:w-80 mb-6 animate-bounce rounded-xl shadow-lg border-4 border-red-600 prank-img" />
 
+  <h1 class="text-5xl md:text-6xl font-extrabold text-red-600 shake prank-text drop-shadow-lg">
+    PRANK!!! 🤪
+  </h1>
 
-<script>
-  const urlParams = new URLSearchParams(window.location.search);
-  const nama = urlParams.get('user');
-  if (nama) {
-    document.getElementById('user-name').textContent = `😎 Kena lu, ${nama}!`;
-  }
-</script>
+  <p class="text-white mt-4 text-lg italic">Lu kira ini form beneran? 🤣 Hahahaha, masuk perangkap bro!</p>
+  <p id="user-name" class="text-blue-400 text-xl mt-3 font-semibold"></p>
 
-  <script src="script.js"></script>
+  <a href="index.html" class="mt-8 inline-block bg-white text-black font-bold py-2 px-6 rounded-full shadow hover:bg-red-600 hover:text-white transition-all duration-300">
+    😵 Balik Isi Lagi
+  </a>
+
+  <audio id="prank-audio" src="https://www.myinstants.com/media/sounds/trololo.mp3" preload="auto"></audio>
+
+  <script>
+    // Ambil nama dari URL
+    const urlParams = new URLSearchParams(window.location.search);
+    const nama = urlParams.get('nama'); // HARUS 'nama', bukan 'user'
+
+    if (nama) {
+      document.getElementById('user-name').textContent = `😎 Kena lu, ${nama.toUpperCase()}!`;
+    }
+
+    // Play audio troll
+    function playPrank() {
+      const audio = document.getElementById('prank-audio');
+      if (audio) {
+        audio.play().catch(err => console.warn('Audio autoplay blocked:', err));
+      }
+    }
+  </script>
 </body>
 </html>
